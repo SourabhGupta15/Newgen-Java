@@ -42,7 +42,7 @@ Inheritance works in nested classes but only when it is non-static.
 Final Keyword :
     It can be used with classes, member variables and methods.
     When used with class, that class cannot be extended. i.e. it cannot be a parent class to any other class.
-    When used with member variable, we cannot override that variable.
+    When used with member variables, we cannot override that variables.
     When used with method, we cannot override that method.
 
 
