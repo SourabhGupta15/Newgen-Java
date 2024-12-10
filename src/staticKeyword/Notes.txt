@@ -1,0 +1,28 @@
+Static variable :
+    It can only be declared globally that is in the class but outside the method and even main method.
+    eg. static datatype variableName;
+
+Static Block :
+    In Java, Static block is executed before main method at the time of class loading.
+    eg. static{
+
+        }
+    
+Static Method :
+    If we apply static keyword on any method then that method is known as Static method.
+    Static method can be called without creating the instance of the object class.
+    It can be invoked directly on the class. For example, ClassName.methodName()
+    eg. static datatype methodName(){
+
+        }
+
+Static Nested Class :
+    A static nested class cannot directly access non-static members of the enclosing class.
+    We can access non-static members of the enclosing class by passing an enclosing class instance to a static nested class method.
+
+this Keyword :
+    It is used to invoke current class instance variable, method and constructor.
+    For variable: this.variableName
+    For method : this.methodName()
+    For constructor : this()
+    If this keyword is not used then compiler automatically writes this keyword during compiling.
