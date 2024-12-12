@@ -1,0 +1,17 @@
+If one task is performed in different ways, it is known as polymorphism.
+In Java, we use method overloading and method overriding to achieve polymorphism.
+
+Method Overloading :
+    Multiple methods can have same name with different parameters.
+    The me must have different parameter types, number of parameters or both.
+    Overloading can occur for both static and instance methods.
+
+Method Overriding :
+    It occurs when a subclass provides a specific implementaion of a method already defined in its superclass.
+    Same Method Signature : The method in the subclass must have the same name, return type (or a covariant return type), and parameter list 
+
+
+Object is the parent class of all classes.
+When a member of a class is called, flow starts from child class and flows upward to parent classes to check for a member.
+
+@Override annotation for method overriding. It is optional. But it is best practice.
