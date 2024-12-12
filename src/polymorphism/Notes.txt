@@ -29,6 +29,7 @@ Method Overriding :
         e.g. : public in the superclass cannot be overridden as protected in the subclass.
 
     Static Methods : Static methods are not overridden; they are hidden if redefined in a subclass.
+                    Static methods are only present at class level. They are not available as instance methods.
 
     Final Methods : Final methods cannot be overridden.
 
