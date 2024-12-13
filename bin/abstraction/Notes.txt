@@ -1,0 +1,2 @@
+We use interface to achieve 100% abstraction.
+Non-abstract methods are methods with body.
