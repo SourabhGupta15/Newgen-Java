@@ -1,7 +1,7 @@
 package abstraction;
 
 public interface Vehicle {
-    public void run();
+    public void run();   //Method Declaration
     public void fuel();
     public void roadTax();
 
