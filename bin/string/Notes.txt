@@ -1,0 +1,3 @@
+String object created using String literal is stored in String Pool in Heap memory. If the data is already present in String pool, then new object created using String literal with same data is referenced to the existing data in String Pool.
+String literal is used to make Java more memory efficient.
+Whenever String object is created using 'new' keyword, new memory is alloted to the object and stored in Heap Memory but not in String pool even though there is same data in String pool or Heap memory.

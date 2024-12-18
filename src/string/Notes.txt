@@ -1,0 +1,75 @@
+In Java, string is basically an object that represents sequence of char values.
+
+An array of characters works same as Java string. For example:
+    char[] ch = {'j', 'a', 'v', 'a', 't', 'p', 'o', 'i', 'n', 't'};
+    String s = new String(ch);
+
+    is same as:
+    String s = "javatpoint";
+
+Java String class provides a lot of methods to perform operations on strings such as compare(), concat(), equals(), split(), length(), replace(), compareTo(), intern(), substring() etc.
+
+The java.lang.String class implements Serializable, Comparable and CharSequence interfaces.
+    1. Serializable : Allows string objects to be serialized into byte streams, facilitating their transmission or storage.
+    2. Comparable<String> : Enables lexical comparison between two strings, supporting natural ordering within collections.
+    3. CharSequence : Provides a unified read-only interface for different kinds of char sequences, allowing String objects to be manipulated and accessed generically.
+
+The Java String is immutable which means it cannot be changed. Whenever we change any string, a new instance is created.
+
+For mutable strings, you can use StringBuffer and StringBuilder classes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to create a string object?
+    1. By String Literal :
+        - Java String literal is created by using double quotes.
+          For example: String s = "welcome";
+        - Each time you create a string literal, the JVM checks the "string constant pool" first.
+          If the string already exists in the pool, a reference to the pooled instance is returned.
+          If the string doesn't exist in the pool a new string instance is created and placed in the pool.
+        - For example:
+            String s1 = "Welcome";
+            String s2 = "Welcome"; //It doesn't create a new instance
+        
+        Why Java uses the concept of String literal?
+            To make Java more memory efficient (because no new objects are created if it exists already in the string constant pool).
+
+    2. By new keyword :
+        e.g. : String s = new String("Welcome); //creates two objects and one reference variable
+        - In such case JVM will create a new string object in normal (non-pool) heap memory, and the literal "Welcome" will be placed in the string constant pool.
+          The variable s will refer to the object in a heap (non-pool).
+
+        Whenever String object is created using 'new' keyword, new memory is alloted to the object and stored in Heap Memory but not in String pool even though there is same data in String pool or Heap memory.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+String Class Methods
+    1. toUpperCase() and toLowerCase() method :
+        The Java String toUpperCase() method converts the String into uppercase letter and String toLowerCase() method into lowercase letter.
+    
+    2. trim() method :
+        The String class trim() method eliminates white spaces before and after the String.
+    
+    3. startsWith() and endsWith() method :
+        The method startsWith() checks whether the String starts with the letters passed as arguments and endsWith() method checks whether the String ends with the letters passed as arguments.
+
+    4. charAt() method :
+        The String class charAt() method returns a character at specified index.
+
+    5. length() method :
+        The String class length() method returns length of the specified String.
+
+    6. valueOf() method :
+        The String class valueOf() method converts given type such as int, long, float, double, boolean, char and char array into String.
+        For example, 
+            int a = 10;
+            String s = String.valueOf(a);
+
+    7. replace() method :
+        The String class replace() method replaces all occurrence of first sequence of character with second sequence of character.
+        For example,
+            String s1 = "Java is a programming language. Java is a platform. Java is an Island.";
+            String replaceString = s1.replace("Java", "Kava"); //replaces all occurrences of "Java" to "Kava"
+
+    8. concat() method :
+        
