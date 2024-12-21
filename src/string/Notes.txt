@@ -61,9 +61,10 @@ String Class Methods
 
     6. valueOf() method :
         The String class valueOf() method converts given type such as int, long, float, double, boolean, char and char array into String.
-        For example, 
+        It is a static method.
+        For example,
             int a = 10;
-            String s = String.valueOf(a);
+            String s = String.valueOf(a); //returns "10", but "10" is a String.
 
     7. replace() method :
         The String class replace() method replaces all occurrence of first sequence of character with second sequence of character.
@@ -72,4 +73,67 @@ String Class Methods
             String replaceString = s1.replace("Java", "Kava"); //replaces all occurrences of "Java" to "Kava"
 
     8. concat() method :
+        The String class concat() method is used to join a string at the end of another string.
+        For example,
+            String b = "b";
+            String c = b.concat("de"); //bde
+        The concat method does not modify String b as String is immutable in Java.
+
+    9. equals() method :
+        The String class equals() method compares the value or content of the String object and returns true if they are same or false if they are different.
+        For example,
+            String s1 = "Welcome";
+            String s2 = new String("Welcome");
+            s1.equals(s2); //returns true
         
+        Note : We generally use the == operator for reference comparison, whereas .equals() method is used for content comparison.
+            == operator is used for reference comparison. It returns true if both String objects refer to same variable or false otherwise.
+            For example,
+                String s1 = "Welcome";
+                String s2 = new String("Welcome");
+                String s3 = "Welcome";
+                String s4 = s1;
+                String s5 = s2;
+                String s6 = new String("Welcome");
+                s1 == s2; //returns false
+                s1 == s3; //returns true
+                s1 == s4; //returns true
+                s3 == s4; //returns true
+                s5 == s2; //returns true
+                s5 == s1; //returns false
+                s6 == s2; //returns false
+                s5 == s6; //returns false
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is a mutable String?
+    A String that can be modified or changed is known as mutable String.
+    StringBuffer and StringBuilder classes are used for creating mutable strings.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+StringBuffer Class
+    Java StringBuffer class is used to create mutable (modifiable) String objects.
+    The StringBuffer class in Java is the same as String class except it is mutable i.e. it can be changed.
+    StringBuffer uses Heap memory. It is not stored in String constant pool.
+    StringBuffer is faster but it is not thread-safe.
+    It is non-synchronized.
+    It is an in-built class in Java.
+
+    1. append() method
+        E.g. :
+            StringBuffer sb = new StringBuffer("Hello ");
+            sb.append("Java"); //now original string is changed
+            println(sb); //prints Hello Java
+    
+    2. insert() method
+        E.g. :
+            StringBuffer sb = new StringBuffer("Hello");
+            sb.insert(1, "Java"); //now original string is changed
+            println(sb); //prints HJavaello
+
+
+StringBuilder Class
+    It is thread-safe.
+    It is synchronized.
+    In case of multi-threading environment, we use StringBuilder.
