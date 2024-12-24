@@ -1,0 +1,126 @@
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is Collection framework?
+    The Collection framework represents a unified architecture for storing and manipulating a group of objects.
+    It enhances code efficiency and readability by offering various data structures, including arrays, linked lists, trees and hash tables, tailored to different programming needs.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Advantages of Java Collection Framework
+    1. Reusability :
+        The framework provides a comprehensive set of common classes and utility methods so that the developers no need to write duplicate code for common operations.
+    
+    2. Quality :
+        Leveraging the Java Collections Framework elevates the quality of programs.
+        The components within the framework have been extensively tested and are widely used by a vast community of developers, ensuring reliabilty and stability in your applications.
+
+    3. Speed :
+        Developers often report an increase in development speed when using the Collections Framework.
+        It allows then to concentrate on the core business logic of their applications rather than on implementing generic collection functionalities, thus speeding up the development process.
+
+    4. Maintenance :
+        The open-source nature of the Java Collections Framework, coupled with readily available API documentaion, facilitates easier code maintenance.
+        Code written using the framework can be easily understood and taken over by other developers, ensuring continuity and ease of maintenance.
+
+    5. Reducces Effort to Design New APIs :
+        An additional benefit is the reduced necessity for API designers and implementers to create new collection mechanisms for each new API.
+        They can instead rely on the standard collection interfaces provided by the framework, streamlining the API development process and ensuring consistency across Java applications.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Hierarchy of Collection Framework
+    The java.util package contains all the classes and interfaces for the collection framework.
+
+        interface Iterable {}
+
+            interface Collection extends Iterable {}
+        
+                interface List extends Collection {}
+                    class ArrayList implements List {}
+                    class LinkedList implements List, Deque {}
+                    class Vector implements List {}
+                        class Stack extends Vector {}
+                
+                interface Queue extends Collection {}
+                    class PriorityQueue implements Queue {}
+                    interface Deque extends Queue
+                        class ArrayDeque implements Deque {}
+
+                interface Set extends Collection {}
+                    class HashSet implements Set {}
+                    class LinkedHashSet implements Set {}
+                    interface SortedSet extends Set {}
+                        class TreeSet implements SortedSet {}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Collection Interface
+    The collections framework defines below several interfaces.
+
+    1. The Collection Interface
+        This enables you to work eith groups of objects; it is at the top of collections hierarchy.
+
+    2. The List Interface
+        This extends Collection and an instance of List stores an ordered collection of elements.
+
+    3. The Set
+        This extends Collection to handle sets, which must contain unique elements.
+    
+    4. The SortedSet
+        This extends Set to handle sorted sets.
+    
+    5. The Map
+        This maps unique keys to values.
+    
+    6. The Map.Entry
+        This describes an element (a key/value pair) in a map. This is an inner class of Map.
+
+    7. The SortedMap
+        This extends Map so that the keys are maintained in an ascending order.
+
+    8. The Enumeration
+        This is legacy interface defines the methods by which you can enumerate (obtain one at a time) the elements in a collection of objects.
+        This legacy interface has been superceded by Iterator.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Collection Interface Methods
+    1. boolean add(Object obj)
+        Adds obj to the invoking collection.
+        Returns true if obj was added to the collection.
+        Returns false if obj is already a member of the collection, or if the collection does not allow duplicates.
+    
+    2. boolean addAll(Collection C)
+        Adds all the elements of c to the invoking collection.
+        Returns true if the operation succeeds (i.e., the elements were added).
+        Otherwise, returns false.
+
+    3. void clear()
+        Removes all elements from the invoking collection.
+
+    4. boolean contains(Object obj)
+        Returns true if obj is an element of the invoking collection. Otherwise, returns fasle.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+List Interface
+    The List interface extends Collection and declares the behavior of a collection that stores a sequence of elements.
+    Declaration of Java List Interface
+        public interface List<E> extends Collection<E>;
+
+        class Main() {
+            psvm(args[]) {
+                // Creating two lists using List interface
+                List <Integer> list1 = new ArrayList <Integer> ();
+                List <Integer> list2 = new ArrayList <Integer> ();
+            }
+        }
+
+    
+    List maintains insertion order and can store duplicate elements.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+list can contain duplicate elements but set always contains unique elements.
