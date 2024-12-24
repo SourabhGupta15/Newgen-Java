@@ -123,4 +123,34 @@ List Interface
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+ArrayList Class
+    The Java ArrayList class provides resizable-array and implements the List interface.
+    
+    Following are the important points about ArrayList -
+        1. It implements all optional list operations and it also permits all elements, includes null.
+        2. It provides methods to manipulate the size of the array that is used internally to store the list.
+    
+    Standard Java arrays are of a fixed length.
+    After arrays are created, they cannot grow or shrink, which means that you must know in advance how many elements an array will hold.
+    Array lists are created with an initial size.
+    When this size is exceeded, the collection is automatically enlarged.
+    When objects are removed, the array may be shrunk.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LinkedList Class
+    The Java LinkedList class operations perform we can expect for a doubly-linked list.
+    Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index.
+
+    Note : ArrayList internally uses dynamic array or growable array to store the data whereas LinkedList uses doubly-linked list to store the data.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Vector Class
+    Vector implements a dynamic array.
+    It is similar to ArrayList, but with two differences -
+        -> Vector is synchronized.
+        -> Vector contains many legacy methods that are not part of the collections framework.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 list can contain duplicate elements but set always contains unique elements.
