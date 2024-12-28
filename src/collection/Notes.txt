@@ -120,6 +120,8 @@ List Interface
 
     
     List maintains insertion order and can store duplicate elements.
+    Allows multiple null values.
+    Better for indexed access and random lookups in ArrayList.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -153,4 +155,55 @@ Vector Class
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-list can contain duplicate elements but set always contains unique elements.
+Set Interface
+    A Set is a collection that cannot contain duplicate elements. It models the mathematical set abstraction.
+
+    Set Interface Methods
+        1. add() : Adds an object to the collection.
+
+        2. clear() : Removes all objects form the collection.
+
+        3. contains() : Returns true if specified object is an element within the collection.
+
+        4. isEmpty() : Returns true if the collection has no elements.
+
+        5. iterator() : Returns an Iterator object for the collection, which may be used to retrieve an object.
+
+        6. remove() : Removes a specified object from the collection.
+
+        7. size() : Returns the number of elements in the collection.
+
+
+    Does not allow dupilcate element.
+    Set does not guarantee insertion order (except in specific implementations like LinkedHashSet).
+    Allows at most one null value.
+    Optimized for searching with no duplicates, especially in HashSet.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+HashSet Class
+    -> Internal implementation : Uses a HashMap to store the elements.
+    -> Order : Does not maintain any order of elements. Unordered.
+    -> Null Values : Allows one null value.
+    -> Performance : Best for constant-time performance for basic operations (add, remove, contains) in average cases. Fast (O(1)).
+    -> Use Case : When you don't care about the order of elements and need fast operations. Fast lookups.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LinkedHashSet Class
+    -> Internal implementation : Uses a combination of a HashMap and a linked list.
+    -> Order : Maintains the insertion order of elements.
+    -> Null Values : Allows one null value.
+    -> Performance : Slightly slower than HashSet due to the overhead of maintaining a linked list.
+    -> Use Case : When you need to maintain the insertion order of elements.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TreeSet Class
+    -> Internal implementation : Uses a TreeMap (Red-Black Tree).
+    -> Order : Maintains elements in natural order (ascending order) or based on a custom comparator.
+    -> Null Values : Does not allow null values (throws NullPointerException for null).
+    -> Performance : Operations are slower (O(log n)) compared to HashSet and LinkedHashSet because of the tree structure.
+    -> Use Case : When you need elements in sorted order.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
