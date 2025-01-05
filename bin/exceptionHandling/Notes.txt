@@ -1,0 +1,95 @@
+What is an Exception in Java?
+    An exception (or exceptional event) is a problem that arises during the execution of a program.
+    When an Exception occurs, the normal flow of the program is disrupted and the program/Application terminates abnormally, which is not recommended, therefore, these exceptions are to be handled.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Why Exceptions Occur?
+    > A user has entered an invalid data.
+    > A file that needs to be opened cannot be found.
+    > A network connection has been lost in the middle of communications or the JVM has run out of memory.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Errors are the errors that are caused by system failures that is not in your or programmer's control.
+
+Exceptions are issues that may be programming issues or network issues or file related issues.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Java Exception Hierarchy
+
+    Object {java.lang} [class] ->
+
+        Throwable [class] ->
+
+            Error {unchecked} ->
+                - OutOfMemoryError
+                - StackOverFlowError
+
+            Exception {checked} [class] ->
+
+                RunTimeException {Unchecked} ->
+                    - NullPointerException
+                    - IllegalArgumentException
+                    - ArithmeticException
+                    - IndexOutOfBoundsException
+
+                Other/CompileTime Exceptions {Checked} ->
+                    - ClassNotFoundException
+                    - IOException
+                    - FileNotFoundException
+                    - SQLException
+                    - NoSuchMethodException
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Java Exception Categories
+    > Compile time/Checked exceptions
+    > Run time/Unchecked exceptions
+    > Errors
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Compile-Time Exceptions
+    > Definition :
+            - These are exceptions that the compiler checks during the compilation process.
+            - They must be declared in the method signature using throws or handled using try-catch.
+
+    > Also Known As : Checked exceptions
+
+    > Examples :
+            - IOException
+            - SQLException
+            - FileNotFoundException
+    
+    > When They Occur : When the program violates certain rules or conditions that can be anticipated and handled during compilation.
+
+    > Key Features :
+            - The program won't compile if these excetions are not handled or declared.
+            - They ensure robust error handling.
+    
+    If the try-catch block is omitted or the exception is not declared with throws, the code will not compile.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Runtime Exceptions
+    > Definition :
+            - These are exceptions that occur during the execution of the program.
+            - The compiler does not check these exceptions.
+
+    > Also Known As : Unchecked exceptions.
+
+    > Examples :
+            - NullPointerException
+            - ArrayIndexOutOfBoundsException
+            - ArithmeticException
+    
+    > When They Occur : During the execution of the program due to logical errors or invalid operations.
+
+    > Key Features :
+            - The program compiles successfully even if runtime exceptions are not handled.
+            - They are often caused by programming mistakes or invalid user input.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
