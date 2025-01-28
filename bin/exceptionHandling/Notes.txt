@@ -2,20 +2,20 @@ What is an Exception in Java?
     An exception (or exceptional event) is a problem that arises during the execution of a program.
     When an Exception occurs, the normal flow of the program is disrupted and the program/Application terminates abnormally, which is not recommended, therefore, these exceptions are to be handled.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Why Exceptions Occur?
     > A user has entered an invalid data.
     > A file that needs to be opened cannot be found.
     > A network connection has been lost in the middle of communications or the JVM has run out of memory.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Errors are the errors that are caused by system failures that is not in your or programmer's control.
 
 Exceptions are issues that may be programming issues or network issues or file related issues.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Java Exception Hierarchy
 
@@ -42,14 +42,14 @@ Java Exception Hierarchy
                     - SQLException
                     - NoSuchMethodException
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Java Exception Categories
     > Compile time/Checked exceptions
     > Run time/Unchecked exceptions
     > Errors
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Compile-Time Exceptions
     > Definition :
@@ -71,7 +71,7 @@ Compile-Time Exceptions
     
     If the try-catch block is omitted or the exception is not declared with throws, the code will not compile.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Runtime Exceptions
     > Definition :
@@ -91,7 +91,7 @@ Runtime Exceptions
             - The program compiles successfully even if runtime exceptions are not handled.
             - They are often caused by programming mistakes or invalid user input.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Java Exception Class Methods
     Following is the list of important methods available in the Throwable class.
@@ -116,7 +116,7 @@ Java Exception Class Methods
     6. public Throwable fillInStackTrace() :
         Fills the stack trace of this Throwable object with the current stack trace, adding to any previous information in the stack trace.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Keywords -
     > try : Defines a block of code to test for exceptions.
@@ -129,7 +129,7 @@ Keywords -
     
     > throws : Declares exceptions that a method can throw.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Rules for try Block
     1. Must be Accompanied by catch or finally :
@@ -138,7 +138,7 @@ Rules for try Block
     2. Contains Risky Code :
         The try block should contain code that might throw an exception.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Rules for catch Block
     1. Exception Handling :
@@ -157,7 +157,7 @@ Rules for catch Block
     5. Cannot Catch Errors :
         Errors (e.g., OutOfMemoryError) are not typically caught as they are not Exception types.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Rules for finally Block
     1. Always Executes :
@@ -172,3 +172,62 @@ Rules for finally Block
 
     4. Overriding Return Statements :
         If a try or catch block contains a return statement, the finally block will execute before the method returns.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Other Rules and Behaviors
+    1. Combining catch and finally :
+        A try block can have either -
+            > One or more catch blocks.
+            > A finally block.
+            > Or both catch and finally.
+
+    2. Nested Try-Catch :
+        You can nest try-catch-finally blocks.
+
+    3. Unhandled Exceptions :
+        If an exception is not caught in the catch block and there is no finally block, the program will terminate abnormally.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Steps to Create a Custom Exception
+    1. Extend the Exception Class :
+        Use Exception if you want a checked/compile time exception.
+        Use RunTimeException if you want an unchecked exception.
+
+    2. Add Constructors :
+        Provide a default constructor.
+        Provide a constructor that accepts a custom error message.
+        Optionally, provide constructors that accept a cause or both message and cause.
+
+    3. Throw the Exception :
+        Use the throw keyword to throw your custom exception.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference between throw and throws :
+    > Along with throw keyword, use the new object of exception class and along with throws keyword use the exception class or interface.
+    
+    > The throw keyword is used to throw the exception explicitly.
+      However, throws keyword is used to declare the exception on the method and in that method there are chances to throw any exception and that method we can declare on the method signature.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+System.exit(int)
+    When System.exit(int) is called in Java, it forcibly terminates the JVM.
+    This means that no further code is executed, including the code in a finally block.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference between final, finally and finalize in Java
+    1. final ---> Keyword :
+        To restrict modification (variables), overriding (methods), or inheritance (classes).
+        E.g. final int MAX = 100;
+
+    2. finally ---> Block :
+        Ensures execution of code after try-catch, regardless of exception.
+        E.g. finally {closeResource();}
+
+    3. finalize ---> Method :
+        Cleanup before garbage collection (now discouraged).
+        E.g. protected void finalize() {}
