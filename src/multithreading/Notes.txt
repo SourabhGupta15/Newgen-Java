@@ -88,3 +88,89 @@ How to Create a Thread in Java
         2. By Implementing the Runnable Interface
             In this approach, you implement the Runnable interface and define the run() method.
             Then, you pass this Runnable object to a Thread object.
+            Example :
+                class MyRunnable implements Runnable {
+                    public void run() {
+                        System.out.println("Thread is running!");
+                    }
+                }
+
+                public class ThreadExample {
+                    public static void main(String[] args) {
+                        MyRunnable myRunnable = new MyRunnable();   // Create a Runnable object
+                        Thread t1 = new Thread(myRunnable);     // Create a Thread object with the Runnable
+                        t1.start();     // Start the thread
+                    }
+                }
+
+            In this example, MyRunnable implements the Runnable interface, and the run() method is where the task is defined.
+            You then create a Thread object, passing the Runnable instance to it, and call start() to begin the execution.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Key Methods for Thread Management in Java
+    1. start() :
+        Begins the execution of a thread.
+        It invokes the run() method in the thread.
+
+    2. run() :
+        Contains the code to be executed by the thread.
+        You must override this method when you create a thread.
+
+    3. sleep(long millis) :
+        Causes the thread to sleep (pause) for a specified amount of time in milliseconds.
+
+    4. currentThread() :
+        It returns a reference to the currently executing thread object.
+
+    5. setName() :
+        It changes the name of the thread.
+
+    6. join() :
+        Used to pause the execution of the current thread until the thread being joined has completed its execution.
+
+    7. yield() :
+        Causes the current thread to pause and allow other threads of the same priority to execute.
+
+    8. isAlive() :
+        Returns whether the thread is still alive (hasn't finished execution).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is the difference between sleep() and wait() methods in Java?
+    1. Purpose and Context :
+        > sleep() :
+            The sleep method is used to pause the execution of the current thread for a specified period of time (in milliseconds or nanoseconds).
+            It belongs to the Thread class.
+            Purpose -
+                To simplify pause or delay the execution of a thread for a given duration.
+                It's commonly used when you want to introduce a delay or simulate some wait time.
+            a. Class : Thread
+            b. ReleasesLock : No (does not release any lock)
+            c. Time : Pauses for a fixed time (ms/ns)
+            d. Use Case : To delay a thread's execution
+            e. InterruptedException : Yes, if interrupted during sleep
+            f. Common Usage : Delay or pause thread execution
+
+        > wait() :
+            The wait() method is used to make a thread wait until it is notified by another thread (through notify() or notifyAll()).
+            It is defined in the Object class (since every Java object can be used as a monitor lock).
+            Purpose -
+                To pause the execution of a thread until another thread sends a signal to notify it that it can resume.
+            a. Class : Object
+            b. ReleasesLock : Yes (releases the lock it holds)
+            c. Time : Waits until notified (or timeout)
+            d. Use Case : To synchronize threads (waiting for notification)
+            e. InterruptedException : Yes, if interrupted during wait
+            f. Common Usage : Threading synchronization and coordination
+            The wait() method is typically used in a synchronized block to pause the execution of a thread until it is notified by another thread using notify() or notifyAll().
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Synchronized Block :
+    Code written in synchronized block is in sync i.e. each line executes one-by-one.
+    Both wait() and notify() must be used inside a synchronized block.
+    This ensures that only one thread can access the shared resource (in this case, the lock object) at a time.
+
+2. notify() vs. notifyAll() :
+    If you have multiple threads waiting, notify() wakes up one waiting thread, while notifyAll() wakes up all of them.
