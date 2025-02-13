@@ -1,0 +1,21 @@
+Spring Framework
+    Spring MVC
+    Spring JPA
+    Spring Boot
+    Spring Batch
+    Spring Security
+    .
+    .
+    .
+    etc.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+M - Model -> Data, Business Logic
+V - View -> HTML, JSP, ... etc.
+C - Controller -> Controller classes
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Java Spring Application Flow
+    Client <---> Front controller/Dispatcher Servlet <---> Controller Layer <---> Service Layer <---> Repository Layer <---> Database

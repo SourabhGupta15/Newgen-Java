@@ -1,0 +1,16 @@
+Spring Framework
+    Spring MVC
+    Spring JPA
+    Spring Boot
+    Spring Batch
+    Spring Security
+    .
+    .
+    .
+    etc.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+M - Model -> Data, Business Logic
+V - View -> HTML, JSP, ... etc.
+C - Controller -> Controller classes
