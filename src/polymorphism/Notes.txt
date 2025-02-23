@@ -5,7 +5,7 @@ In Java, we use method overloading and method overriding to achieve polymorphism
 
 Method Overloading :
     Multiple methods can have same name with different parameters.
-    The me must have different parameter types, number of parameters or both.
+    The method must have different parameter types, number of parameters or both.
     Overloading can occur for both static and instance methods.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
