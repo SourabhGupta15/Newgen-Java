@@ -23,3 +23,84 @@ Java Spring Application Flow
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Dependencies are third-party libraries where required classes are present.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GET -> is used to get data. It doesn't have body.
+POST -> is basically used to create the resources
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Employee Management Application / HRMS
+
+    GET -> /api/employees               -> Get employee list present in the db
+    GET -> /api/employees/{id}          -> Get employee with given id from the db
+    POST -> /api/employees              -> We can create employee record
+    PUT -> /api/employees/{id}          -> Update the employee
+    DELETE -> /api/employees/{id}       -> We can delete the employee
+
+
+
+
+    SELECT * FROM employees;                    -> All employees
+
+    SELECT * FROM employees WHERE id = 10;      -> only employee having id is 10
+
+    INSERT INTO employees (id, name, email, position, salary, created_at)
+    VALUES (1, 'John Doe', 'john.doe@example.com', 'Software Engineer', 75000, NOW());
+
+    UPDATE employees;
+    
+    DELETE * FROM employees WHERE id = 10;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Key Responsibilities of a Controller
+    1. Receive Requests : Handles HTTP requests such as GET, POST, PUT, DELETE, etc.
+
+    2. Process Requests : Calls the service layer or business logic to process the data.
+
+    3. Return Responses : Returns a response, typically as a view (HTML page) or as data (like JSON or XML for APIs).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Types of Controllers
+    1. Standard Controllers : Uses @Controller annotation and typically returns views. Returns view component (HTML, JSP, etc.). Used in JSP. Requires @ResponseBody for JSON.
+
+    2. REST Controllers : Uses @RestController annotation and returns data (like JSON or XML). Includes @ResponseBody.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Annotation Used in Controllers
+    1. @Controller : Marks a class as a controller in Spring MVC. Used to develop the monolithic or full stack applications using the JSP.
+
+    2. @RestController : A convenience annotation equivalent to @Controller and @ResponseBody combined. Used to develop the REST APIs.
+
+    3. @RequestMapping : Maps HTTP requests to handler methods of the controller. We can use it on the method level as well as the class level.
+
+    4. @GetMapping, @PostMapping, @PutMapping, @DeleteMapping : Shortcuts for specific HTTP methods.
+
+    5. @PathVariable : Extracts values from URI paths.
+
+    6. @RequestParam : Extracts query parameters.
+
+    7. @RequestBody : Maps HTTP request body to a Java object (for JSON, XML, etc.).
+
+    8. @ResponseBody : Maps the return value of a method directly to the HTTP response body.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How Controllers work in Spring MVC
+    1. Request Handling : HTTP requests are routed to the appropriate controller by the DispatcherServlet.
+
+    2. RequestMapping : The framework determines the correct method to call based on the URL and HTTP method.
+
+    3. Processing Logic : The controller calls services or other components for processing.
+
+    4. Response Generation : The controller returns a view (via templates) or serialized data (JSON/XML).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Method level : means on the method.
+Class level : means on the class.
+Field level : means on the attributes.
