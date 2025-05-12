@@ -1,0 +1,52 @@
+Child class always acquires all property(data) and behaviour(method) of parent class.
+eg.
+class A{ //parent class
+    int x = 10;
+    
+    void msg() {
+        S.out.print("Hello A")
+    }
+}
+
+class B extends A{ //child class
+    int y = 20;
+}
+
+class Test{
+    psvm(){
+        B.b = new B();
+        int c = b.x;
+        S.out.print(c); // 10
+        b.msg(); // Hello A
+    }
+}
+
+Inheritance follows "is-a" relationship.
+eg. Car is a Vehicle.
+    Vehicle - Parent class
+    Car - Child class
+
+Types of Inheritance:
+    1. Sinle : B extends A
+    2. Multilevel : C extends B and B extends A
+    3. Heirarchical : B extends A and C extends A
+    4. Multiple : C extends A, B // Can be achieved in Java when parent classes are not class but interface.
+    5. Hybrid : Mixture of Multilevel, Heirarchical and Multiple // But when Multiple comes it can be achieved through interface.
+
+Multiple and Hybrid Inheritance is not supported in Java.
+It can only be achieved when parent classes are interface.
+
+Inheritance works in nested classes but only when it is non-static.
+
+
+Final Keyword :
+    It can be used with classes, member variables and methods.
+    When used with class, that class cannot be extended. i.e. it cannot be a parent class to any other class.
+    When used with member variables, we cannot override that variables.
+    When used with method, we cannot override that method.
+
+
+Why use Inheritance?
+    For Code Reusability.
+    For method overriding (so runtime polymorphism can be achieved).
+    To write neat and clean code.

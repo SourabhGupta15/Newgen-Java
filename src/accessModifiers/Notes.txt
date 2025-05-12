@@ -1,0 +1,21 @@
+Access Modifiers in Java:
+    1. Private :
+        The access level is only within the class. 
+        It cannot be accessed from outside the class.
+        Only used for variables, method, constructor and nested/inner class.
+        Outer class cannot be Private.
+    
+    2. Default :
+        The access level is only within the package.
+        It cannot be accessed from outside the package.
+        If you do not specify any access level, it will be Default.
+    
+    3. Protected :
+        The access level is only within the package and outside the package through child class.
+        If you do not make the child class, it cannot be accessed from outside the package.
+        Only used for variables, method, constructor and nested/inner class.
+        Outer class cannot be Protected.
+    
+    4. Public :
+        The access level is everywhere.
+        It can be accessed from within the class, outside the class, within the package and outside the package.

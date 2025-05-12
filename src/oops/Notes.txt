@@ -1,0 +1,129 @@
+Instance Block : 
+    {
+        statement;
+    }
+
+
+Static Block :
+    static {
+        statement;
+    }
+
+
+Class : 
+    class Abc {
+
+    }
+
+
+Interface : 
+    interface Abc {
+
+    }
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Variables present inside the class but outside the method are called instance variables.
+Variables present inside the method are called local variables.
+Local variables are only accessible within the method.
+
+Object attributes are stored in Heap memory
+And Object reference are stored in Stack memory.
+for example: 
+    Student S1 = new Student();
+    S1.id = 123;
+    S1.age = 25;
+S1 will be stored in Stack memory which will point at S1.id and S1.age in Heap memory.
+//For graphics refer javatpoint topic on objects and classes.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+newInstance() Method : 
+Example : 
+    Student s1 = (Student) Class.forName("package_Name.Student").newInstance();
+        //Here package_Name is oops because we are in oops package.
+
+
+clone() Method :
+Example :
+    Student s2 = (Student) s1.clone();
+        //s1 is previous object of same class.
+//Clone method is used to copy values from previous object to the new object created basically it clones.
+
+
+Deserialization : 
+Used to create object when data is to read from a file or over the network.
+
+
+Factory Method to create Object : 
+1. Create a method, example :
+    public static getinstance() {
+        return new Student();
+    }
+2. Create a object, example : 
+    Student s3 = Student.getinstance();
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Anonymous Object : An object which has no reference is known as an anonymous object.
+
+While creating parameterised constructor, creating default constructor is compulsory.
+Constructor should not have a return type.
+A Java constructor cannot be abstract, static, final and synchronized.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Constructor Overloading :
+    Creating multiple constructors of same class.
+    For example, creating a default and multiple parameterised constructors with different parameter lists simultaneously.
+    They are differentiated by the compiler by the number of parameters in list and their types.
+
+Constructor Chaining :
+Calling constructor of a same class or a superclass from a constructor using this() method.
+for example:
+    Student(String n, float m) {
+        name = n;
+        marks = m;
+    }
+
+    Student(int i, String n, float m) {
+        this(n, m);
+        id = i;
+    }
+
+You can do it multiple times.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. JVM Memory Structure :
+    1. Stack Memory:
+        Local variable reference and object reference are stored in stack memory.
+        Basically addresses are stored in Stack memory.
+        Only numeric valued variables and their data is stored in Stack memory. Not of objects.
+        This applies for all methods in the class. Even method is stored in stack.
+        If a new variable with same data value for String is created it points to the same address in String Pool in Heap Memory rather than creating new data.
+
+    2. Heap Memory
+        Data inside variables and objects are stored in Heap memory.
+        String data is stored in String Pool in Heap Memory.
+        Heap memory area has 3 parts:
+        1. Young Generation
+            All the new objects are allocated in this memory.
+            When this gets full, Minor garbage collection takes place and the data that have survived after many rounds of minor garbage collection are shifted in Old Generation area.
+
+        2. Old Generation
+            The data in Young Generation that have survived after many rounds of minor garbage collection are shifted in Old Generation area.
+            When this gets full, Major garbage collection takes place and the data that have survived after many rounds of major garbage collection are shifted in Permanent Generation area.
+
+        3. Permanent Generation
+            It is a special space in Java Heap  which is separated from the main memory where all the Static content is stored in this section.
+            It also stores metadata required by JVM. Metadata is data which is used to describe the data.
+            It contains limited size which leads to an OutOfMemoryError.
+            It's default size is 64 MB on 32-bit JVM and 82 MB on 64-bit JVM.
+
+    3. Metaspace
+        It was introduced in Java 8
+        It replaced Permanent Generation memory
+        It keeps increasing in size as data increases.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------

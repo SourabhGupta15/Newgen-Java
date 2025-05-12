@@ -1,0 +1,139 @@
+In Java, string is basically an object that represents sequence of char values.
+
+An array of characters works same as Java string. For example:
+    char[] ch = {'j', 'a', 'v', 'a', 't', 'p', 'o', 'i', 'n', 't'};
+    String s = new String(ch);
+
+    is same as:
+    String s = "javatpoint";
+
+Java String class provides a lot of methods to perform operations on strings such as compare(), concat(), equals(), split(), length(), replace(), compareTo(), intern(), substring() etc.
+
+The java.lang.String class implements Serializable, Comparable and CharSequence interfaces.
+    1. Serializable : Allows string objects to be serialized into byte streams, facilitating their transmission or storage.
+    2. Comparable<String> : Enables lexical comparison between two strings, supporting natural ordering within collections.
+    3. CharSequence : Provides a unified read-only interface for different kinds of char sequences, allowing String objects to be manipulated and accessed generically.
+
+The Java String is immutable which means it cannot be changed. Whenever we change any string, a new instance is created.
+
+For mutable strings, you can use StringBuffer and StringBuilder classes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to create a string object?
+    1. By String Literal :
+        - Java String literal is created by using double quotes.
+          For example: String s = "welcome";
+        - Each time you create a string literal, the JVM checks the "string constant pool" first.
+          If the string already exists in the pool, a reference to the pooled instance is returned.
+          If the string doesn't exist in the pool a new string instance is created and placed in the pool.
+        - For example:
+            String s1 = "Welcome";
+            String s2 = "Welcome"; //It doesn't create a new instance
+        
+        Why Java uses the concept of String literal?
+            To make Java more memory efficient (because no new objects are created if it exists already in the string constant pool).
+
+    2. By new keyword :
+        e.g. : String s = new String("Welcome); //creates two objects and one reference variable
+        - In such case JVM will create a new string object in normal (non-pool) heap memory, and the literal "Welcome" will be placed in the string constant pool.
+          The variable s will refer to the object in a heap (non-pool).
+
+        Whenever String object is created using 'new' keyword, new memory is alloted to the object and stored in Heap Memory but not in String pool even though there is same data in String pool or Heap memory.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+String Class Methods
+    1. toUpperCase() and toLowerCase() method :
+        The Java String toUpperCase() method converts the String into uppercase letter and String toLowerCase() method into lowercase letter.
+    
+    2. trim() method :
+        The String class trim() method eliminates white spaces before and after the String.
+    
+    3. startsWith() and endsWith() method :
+        The method startsWith() checks whether the String starts with the letters passed as arguments and endsWith() method checks whether the String ends with the letters passed as arguments.
+
+    4. charAt() method :
+        The String class charAt() method returns a character at specified index.
+
+    5. length() method :
+        The String class length() method returns length of the specified String.
+
+    6. valueOf() method :
+        The String class valueOf() method converts given type such as int, long, float, double, boolean, char and char array into String.
+        It is a static method.
+        For example,
+            int a = 10;
+            String s = String.valueOf(a); //returns "10", but "10" is a String.
+
+    7. replace() method :
+        The String class replace() method replaces all occurrence of first sequence of character with second sequence of character.
+        For example,
+            String s1 = "Java is a programming language. Java is a platform. Java is an Island.";
+            String replaceString = s1.replace("Java", "Kava"); //replaces all occurrences of "Java" to "Kava"
+
+    8. concat() method :
+        The String class concat() method is used to join a string at the end of another string.
+        For example,
+            String b = "b";
+            String c = b.concat("de"); //bde
+        The concat method does not modify String b as String is immutable in Java.
+
+    9. equals() method :
+        The String class equals() method compares the value or content of the String object and returns true if they are same or false if they are different.
+        For example,
+            String s1 = "Welcome";
+            String s2 = new String("Welcome");
+            s1.equals(s2); //returns true
+        
+        Note : We generally use the == operator for reference comparison, whereas .equals() method is used for content comparison.
+            == operator is used for reference comparison. It returns true if both String objects refer to same variable or false otherwise.
+            For example,
+                String s1 = "Welcome";
+                String s2 = new String("Welcome");
+                String s3 = "Welcome";
+                String s4 = s1;
+                String s5 = s2;
+                String s6 = new String("Welcome");
+                s1 == s2; //returns false
+                s1 == s3; //returns true
+                s1 == s4; //returns true
+                s3 == s4; //returns true
+                s5 == s2; //returns true
+                s5 == s1; //returns false
+                s6 == s2; //returns false
+                s5 == s6; //returns false
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is a mutable String?
+    A String that can be modified or changed is known as mutable String.
+    StringBuffer and StringBuilder classes are used for creating mutable strings.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+StringBuffer Class
+    Java StringBuffer class is used to create mutable (modifiable) String objects.
+    The StringBuffer class in Java is the same as String class except it is mutable i.e. it can be changed.
+    StringBuffer uses Heap memory. It is not stored in String constant pool.
+    StringBuffer is faster but it is not thread-safe.
+    It is non-synchronized.
+    It is an in-built class in Java.
+
+    1. append() method
+        E.g. :
+            StringBuffer sb = new StringBuffer("Hello ");
+            sb.append("Java"); //now original string is changed
+            println(sb); //prints Hello Java
+    
+    2. insert() method
+        E.g. :
+            StringBuffer sb = new StringBuffer("Hello");
+            sb.insert(1, "Java"); //now original string is changed
+            println(sb); //prints HJavaello
+
+
+StringBuilder Class
+    It is thread-safe.
+    It is synchronized.
+    In case of multi-threading environment, we use StringBuilder.

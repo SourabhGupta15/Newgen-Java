@@ -1,0 +1,60 @@
+Java Package :
+    Package in Java can be categorized in two form : built-in package and user-defined package.
+    There are many built-in packages such as java, lang, awt, javax, swing, net, io, util, sql, etc.
+
+    Advantage of Java Package :
+        Java package is used to categorizethe classes and interfaces so that they can be easily maintained.
+        Java package provides access protection.
+        Java package removes naming collision.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Encapsulation :
+    Binding (or wrapping) code and data together into a single unit are known as encapsulation.
+    For example, a capsule, it is wrapped with different medicines.
+    
+    A Java class is the example of encapsulation.
+    Every class in Java is encapsulated.
+
+    A fully encapsulated Java class is in which all the data members are private.
+    Java bean is the fully encapsulated class because all the data members are private here.
+
+    
+    We can create a fully encapsulated class in Java by making all the data members of the class private.
+    And then we can use setter and getter methods to set and get the data in it.
+
+    Advantage of Encapsulation in Java :
+        It provides you the control over the data.
+            Suppose you want to set the value of id which should be greater than 100 only, you can write the logic inside the setter method.
+            You can write the logic not to store the negative numbers in the setter methods.
+
+        It is a way to achieve data hiding in Java because other class will not be able to access the data through the private data members.
+        E.g. :
+            public class Student {
+
+                //private data member
+                private String name;
+
+                //getter method for name
+                public String getName() {
+                    return name;
+                }
+
+                //setter method for name
+                public void setName (String name) {
+                    this.name = name;
+                }
+            }
+
+    
+    Read-Only Class :
+        public class Student {
+            
+            //private data member
+            private String college = "AKG";
+
+            //getter method for college
+            public String getCollege() {
+                return college;
+            }
+        }

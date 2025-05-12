@@ -1,0 +1,239 @@
+Spring Framework
+    Spring MVC
+    Spring JPA
+    Spring Boot
+    Spring Batch
+    Spring Security
+    .
+    .
+    .
+    etc.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+M - Model -> Data, Business Logic
+V - View -> HTML, JSP, ... etc.
+C - Controller -> Controller classes. It handles HTTP requests, processes them (typically using services), and returns a response to the client.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Java Spring Application Flow
+    Client <---> Front controller/Dispatcher Servlet <---> Controller Layer <---> Service Layer <---> Repository Layer <---> Database
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dependencies are third-party libraries where required classes are present.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GET -> is used to get/read data from database. It doesn't have request body.
+POST -> is basically used to create the resources/enitities' objects, if not already present, into database. We can update details using POST as well but we should not do it as it is not a good way to write code. It should have response "201 Created". It has request body/payload.
+PUT -> is used to update details of the existing data or create a resource. It has request body/payload.
+DELETE -> is used to delete the existing resources from table.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Employee Management Application / HRMS
+
+    GET -> /api/employees               -> Get employee list present in the db
+    GET -> /api/employees/{id}          -> Get employee with given id from the db
+    POST -> /api/employees              -> We can create employee record
+    PUT -> /api/employees/{id}          -> Update the employee
+    DELETE -> /api/employees/{id}       -> We can delete the employee
+
+
+
+
+    SELECT * FROM employees;                    -> All employees
+
+    SELECT * FROM employees WHERE id = 10;      -> only employee having id is 10
+
+    INSERT INTO employees (id, name, email, position, salary, created_at)
+    VALUES (1, 'John Doe', 'john.doe@example.com', 'Software Engineer', 75000, NOW());
+
+    UPDATE employees;
+    
+    DELETE * FROM employees WHERE id = 10;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Key Responsibilities of a Controller
+    1. Receive Requests : Handles HTTP requests such as GET, POST, PUT, DELETE, etc.
+
+    2. Process Requests : Calls the service layer or business logic to process the data.
+
+    3. Return Responses : Returns a response, typically as a view (HTML page) or as data (like JSON or XML for APIs).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Types of Controllers
+    1. Standard Controllers : Uses @Controller annotation and typically returns views. Returns view component (HTML, JSP, etc.). Used in JSP. Requires @ResponseBody for JSON.
+
+    2. REST Controllers : Uses @RestController annotation and returns data (like JSON or XML). Includes @ResponseBody.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Annotation Used in Controllers
+    1. @Controller : Marks a class as a controller in Spring MVC. Used to develop the monolithic or full stack applications using the JSP.
+
+    2. @RestController : A convenience annotation equivalent to @Controller and @ResponseBody combined. Used to develop the REST APIs.
+
+    3. @RequestMapping : Maps HTTP requests to handler methods of the controller. We can use it on the method level as well as the class level.
+
+    4. @GetMapping, @PostMapping, @PutMapping, @DeleteMapping : Shortcuts for specific HTTP methods.
+
+    5. @PathVariable : Extracts values from URI paths.
+
+    6. @RequestParam : Extracts query parameters.
+
+    7. @RequestBody : Maps HTTP request body to a Java object (for JSON, XML, etc.).
+
+    8. @ResponseBody : Maps the return value of a method directly to the HTTP response body.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How Controllers work in Spring MVC
+    1. Request Handling : HTTP requests are routed to the appropriate controller by the DispatcherServlet.
+
+    2. RequestMapping : The framework determines the correct method to call based on the URL and HTTP method.
+
+    3. Processing Logic : The controller calls services or other components for processing.
+
+    4. Response Generation : The controller returns a view (via templates) or serialized data (JSON/XML).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Method level : means on the method.
+Class level : means on the class.
+Field level : means on the attributes.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Who are you? (Authentication)
+What are you allowed to do in this system? (Authorization)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dependency Injections in Spring
+    1. Property/Field Injection -> Need to use @Autowired
+    2. Setter Injection -> Need to use @Autowired
+    3. Constructor Injection -> Does not need @Autowired
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+HTTP Status Codes in Spring Framework
+    HTTP status codes are three-digit numeric codes used in HTTP responses to indicate the outcome of a client's request to a server.
+    They help both clients (e.g., browsers, API consumers) and servers communicate about the success, failure, or status of the interaction.
+
+    -> Structure
+        Each HTTP status code consists of :
+            1. Category (!st digit) : Defines the general type of response.
+            2. Detailed Code (last two digits) : Provides specific information about the response.
+
+    -> Categories
+        1. 1xx: Informational
+            - Indicates the request was received and is being processed.
+                Example : 100 Continue
+
+        2. 2xx: Success
+            - Confirms the request was successfully processed.
+                Example : 200 OK, 201 Created
+
+        3. 3xx: Redirection
+            - Indicates further actions are needed to complete the request.
+                Example : 301 Moved Permanently, 302 Found
+
+        4. 4xx: Client Errors
+            - Indicates a problem with the client's request (e.g., bad syntax, unauthorized).
+                Example : 400 Bad Request, 404 Not Found
+
+        5. 5xx: Server Errors
+            - Indicates the server failed to fulfill a valid request.
+                Example : 500 Internal Server Error, 503 Service Unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1xx: Informational Responses
+    -> 100 Continue : Indicates that the initial part of a request has been received and the client can continue with the rest.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2xx: Success Responses
+    -> 200 OK : Standard success response for GET, PUT, DELETE, or successful POST requests.
+
+    -> 201 Created : Used when a resource is successfully created (e.g., after a POST request).
+
+    -> 204 No Content : Indicates success but with no content to return (e.g., after a DELETE operation).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3xx: Redirection Responses
+    -> 301 Moved Permanently : The requested resource has been moved to a new URL.
+
+    -> 302 Found : The resource is temporarily available at a different URL.
+
+    -> 304 Not Modified : Indicates that the resource has not changed since the last request (used with caching).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4xx: Client Errors
+    -> 400 Bad Request : The server cannot process the request due to invalid syntax or missing parameters.
+
+    -> 401 Unauthorized : Authentication is required but missing or invalid.
+
+    -> 403 Forbidden : The client is authenticated but does not have permission to access the resource.
+
+    -> 404 Not Found : The requested resource does not exist on the server.
+
+    -> 409 Conflict : Indicates a conflict with the current state of the resource (e.g., duplicate entries).
+
+    -> 422 Unprocessable Entity : The server understands the request but cannot process it due to semantic errors (commom in validation errors).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5xx: Server Errors
+    -> 500 Internal Server Error : A generic error indicating something went wrong on the server.
+
+    -> 502 Bad Gateway : Ther server received an invalid response from an upstream server.
+
+    -> 503 Service Unavailable : The server is temporarily unable to handle the request, often due to maintenance or overload.
+
+    -> 504 Gateway Timeout : The server did not receive a timely response from an upstream server.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Most Frequently Used :
+    -> 200 OK : For successful operations.
+
+    -> 201 Created : For resource creation (e.g., adding a new entity).
+
+    -> 400 Bad Request : For invalid inputs or malformed requests.
+
+    -> 404 Not Found : When the requested resource doe not exist.
+
+    -> 500 Internal Server Error : For unexpected server-side issues.
+
+    
+    Using these appropriately ensures your API is intuitive and REST-compliant.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lifecycle of Spring Bean
+    1. Instantiation
+    2. Dependency Injection
+    3. Initialization -> @PostConstruct and init() method
+    4. Destruction -> @PreDestroy and destroy() method
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bean Scopes
+          Scope    ->             Lifetime             ->            Use Case
+    
+    1.  sinlgeton  ->        Entire application        ->    Stateless, shared beans
+    2.  prototype  ->   Per request to the container   ->    Stateful or unique beans
+    3.   request   ->  Single HTTP request (web apps)  ->     Request-specific data
+    4.   session   ->  Single HTTP session (web apps)  ->     Session-specific data
+    5. application -> Entire ServletContext (web apps) ->  Application-wide shared data
+    6.  websocket  ->     Single WebSocket session     ->     WebSocket-specific data
+
+    We can create custom bean scope as well by writing our own logic.

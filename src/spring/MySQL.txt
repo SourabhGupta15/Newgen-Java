@@ -1,0 +1,12 @@
+Commands 
+    1. To connect mysql server : mysql -u root -p
+
+    2. To view existing databases : show databases;
+    
+    3. To select existing database : use db_name;
+
+    4. To view tables : show tables;
+
+    5. To create new database : create database db_name;
+
+    6. To delete an existing database : drop database db_name;
