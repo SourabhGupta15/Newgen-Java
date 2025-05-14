@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <!-- <head>
-        <title>My First HTML Page</title>
-    </head> -->
 
     <head>
-        <style>
+
+        <title>My First HTML Page</title>
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- <style>
             body {
                 background-color: aqua;
             }
 
             p {
                 font-size: 25px;
+                color: rgb(219, 18, 159);
             }
-        </style>
+
+            table {
+                background-color: rgb(185, 113, 113);
+                color: aquamarine;
+                height: 150px;
+                width: 400px;
+                margin: 50px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            h5 {
+                color: chartreuse;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: rgb(110, 29, 202);
+                background-color: royalblue;
+            }
+
+            div{
+                margin-left: 30%;
+                background-color: rgb(125, 184, 236);
+                width: 400px;
+                height: 200px;
+            }
+
+            ul {
+                margin: 50px;
+                padding-top: 50px;
+            }
+
+            ol {
+                margin: 50px;
+                padding-top: 50px;
+            }
+
+            form{
+                margin: 50px;
+                padding: 50px;
+            }
+        </style> -->
     </head>
 
     <body>
@@ -22,33 +70,41 @@
 
         <h1 style="color: red;">This is a red Heading</h1>
 
-        <h1>Welcome to HTML Basics</h1>
-        <h2>This is an H2 Heading</h2>
+        <h1 class="abc">Welcome to HTML Basics</h1>
+        <h2 style="color: rgb(250, 217, 32); font-size: large;">This is an H2 Heading</h2>
         <h3>This is an H3 Heading</h3>
         <h4>This is an H4 Heading</h4>
         <h5>This is an H5 Heading</h5>
         <h6>This is an H6 Heading</h6>
 
-        <p style="color: rgb(219, 18, 159);">This is a simple webpage.</p>
+        <p>This is a simple webpage.</p>
 
         <a href="https://www.tpointtech.com/html-tutorial">Learn HTML</a>
 
-        <ul>
-            <li>Apple</li>
-            <li>Banana</li>
-            <li>Cherry</li>
-            <li>Pineapple</li>
-        </ul>
+        <div>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Cherry</li>
+                <li>Pineapple</li>
+            </ul>
+        </div>
 
-        <ol>
-            <li>First</li>
-            <li>Second</li>
-            <li>Third</li>
-        </ol>
+        <br><br>
 
-        <table border="2">
+        <div>
+            <ol>
+                <li>First</li>
+                <li>Second</li>
+                <li>Third</li>
+            </ol>
+        </div>
 
-            <tr>
+        <br><br>
+
+        <table border="2" style="margin-left: 30%;">
+
+            <tr style="text-decoration: underline; text-transform: uppercase; color: black;">
                 <th>Name</th>
                 <th>Age</th>
             </tr>
@@ -65,15 +121,19 @@
 
         </table>
 
-        <form action="/submit" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+        <br><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+        <div style="color: blue;">
+            <form action="/submit" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
 
-            <button type="submit">Submit</button>
-        </form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+
+                <button style="border: 2px; color: brown;" type="submit">Submit</button>
+            </form>
+        </div>
 
     </body>
 </html>
