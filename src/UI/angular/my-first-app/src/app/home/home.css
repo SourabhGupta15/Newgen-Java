@@ -1,8 +1,12 @@
-h3 {
+/* h3 {
     background-color: bisque;
-}
+} */
 
 div {
-    background-color: aquamarine;
-    margin-left: 10px;
+    background-color: lightblue;
+    /* margin-left: 10px; */
+
+    div {
+        padding: 15px;
+    }
 }
