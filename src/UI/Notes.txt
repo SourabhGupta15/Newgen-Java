@@ -1,0 +1,2 @@
+Employee List
+    backend api(SPRING) -> Service class - employeeService.ts(call api) -> employee-list.ts -> employee-list.html -> (data UI)

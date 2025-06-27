@@ -5,6 +5,7 @@ import { Aboutus } from './aboutus/aboutus';
 import { Course } from './course/course';
 import { Contactus } from './contactus/contactus';
 import { Counter } from './counter/counter';
+import { EmployeeList } from './employee-list/employee-list';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', component: Home},
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'about', component: Aboutus},
     { path: 'course', component: Course},
     { path: 'contact', component: Contactus},
-    { path: 'counter', component: Counter}
+    { path: 'counter', component: Counter},
+    { path: 'employee-list', component: EmployeeList}
 ];
