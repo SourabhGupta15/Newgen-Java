@@ -1,0 +1,44 @@
+.counter-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-left: 45%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:nth-child(1) {
+    background-color: green;
+    color: white;
+}
+
+button:nth-child(2) {
+    background-color: red;
+    color: white;
+}
+
+button:nth-child(3) {
+    background-color: gray;
+    color: white;
+}
