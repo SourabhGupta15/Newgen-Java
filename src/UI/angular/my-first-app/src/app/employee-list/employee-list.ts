@@ -28,4 +28,9 @@ export class EmployeeList implements OnInit{
         this.employeeList = data;
       })
   }
+  
+  updateEmployee(id: number | null) {
+    console.log('inside updateEmployee method :', id);
+    window.location.href = `/update-employee/${id}`;
+  }
 }

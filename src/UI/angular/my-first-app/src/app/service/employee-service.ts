@@ -15,4 +15,16 @@ export class EmployeeService {
     console.log('Inside getEmployees()');
     return this.httpClient.get<Employee[]>(this.BASE_URL);
   }
+
+  createEmployee(employee: Employee): Observable<Object> {
+    return this.httpClient.post(this.BASE_URL, employee);
+  }
+
+  getEmployeeByID(id: number): Observable<Employee> {
+    return this.httpClient.get<Employee>(`${this.BASE_URL}/${id}`);
+  }
+
+  updateEmployee(id: number, employee: Employee): Observable<Object> {
+    return this.httpClient.put(`${this.BASE_URL}/${id}`, employee);
+  }
 }

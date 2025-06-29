@@ -1,6 +1,6 @@
 export class Employee {
-    id: number = 0;
+    id: number | null = null;
     name: string = '';
-    salary: number = 0;
+    salary: number | null = null;
     department: string = '';
 }
