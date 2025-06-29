@@ -23,14 +23,31 @@ export class EmployeeList implements OnInit{
       //   { id: 5, name: 'Sam', salary: 30000, department: 'IT'}
       // ]
 
-      this.employeeService.getEmployees().subscribe(data => {
-        data.forEach((employee) => console.log(employee));
-        this.employeeList = data;
-      })
+    this.getEmployees();
+  }
+  
+  getEmployees() {
+    this.employeeService.getEmployees().subscribe(data => {
+      data.forEach((employee) => console.log(employee));
+      this.employeeList = data;
+    })
   }
   
   updateEmployee(id: number | null) {
     console.log('inside updateEmployee method :', id);
     window.location.href = `/update-employee/${id}`;
+  }
+
+  deleteEmployee(id: number | null) {
+    console.log('inside deleteEmployee method :', id);
+    this.employeeService.deleteEmployee(id).subscribe((data: any) => {
+      console.log('delete api response :', data);
+      this.getEmployees();
+    }, error => console.log('error from delete api call :', error));
+  }
+
+  viewEmployee(id: number | null) {
+    console.log('inside viewEmployee method :', id);
+    window.location.href = `/employee-details/${id}`;
   }
 }
