@@ -19,9 +19,23 @@ public class Main {
         // User user = new Instructor(10);
         // Utils.printUser(user);
 
-        var instructors = new GenericList<Instructor>();
-        var users = new GenericList<User>();
-        Utils.printUsers(new GenericList<Instructor>());
-        Utils.printUsers(new GenericList<User>());
+        // var instructors = new GenericList<Instructor>();
+        // var users = new GenericList<User>();
+        // Utils.printUsers(new GenericList<Instructor>());
+        // Utils.printUsers(new GenericList<User>());
+
+        var list = new GenericList<String>();
+        list.add("a");
+        list.add("b");
+
+        // var iterator = list.iterator();
+        // while (iterator.hasNext()) {
+        //     var current = iterator.next();
+        //     System.out.println(current);
+        // }
+
+        for (var item : list) {
+            System.out.println(item);
+        }
     }
 }
