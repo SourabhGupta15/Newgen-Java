@@ -1,0 +1,22 @@
+Java provides many predefined functional interfaces that we can use to perform common tasks.
+These interfaces are defined in java.util.function package.
+
+There are four types of functional interfaces defined in this package :
+    > Consumer :
+        It represents an operation that takes single argument and returns no result.
+        It consumes a value.
+        void consume(obj)
+
+    > Supplier :
+        It represents an operation that takes no input and returns a value.
+        It supplies a value.
+        obj supply()
+
+    > Function :
+        It represents a function that can map a value to different value.
+        obj map(obj)
+
+    > Predicate:
+        It represents an operation that takes an object and checks to see if an object satisfies some criteria. We use this in filtering data.
+        For eg. with the predicate interface we can get the customers who don't have a phone number or filter courses that are older than 2 years.
+        bool test(condition)
