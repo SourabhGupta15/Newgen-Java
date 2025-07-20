@@ -21,6 +21,13 @@ public class Main {
         // }
 
         // CompletableFuturesDemo.showRunningCodeOnCompletion();
-        CompletableFuturesDemo.showHandlingExceptions();
+        // CompletableFuturesDemo.showHandlingExceptions();
+        // CompletableFuturesDemo.showTransformingCompletableFutures();
+        // CompletableFuturesDemo.showComposingCompletableFutures();
+        // CompletableFuturesDemo.showCombiningCompletableFutures();
+        // CompletableFuturesDemo.showWaitingForManyTasksToComplete();
+        // CompletableFuturesDemo.showWaitingForFirstTask();
+        // CompletableFuturesDemo.showHandlingTimeouts();
+        CompletableFuturesDemo.showFlightServices();
     }
 }
